@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INTRODUCTION JAVASCRIPT</h1>
+    <h3>LES TYPES DES VARIABLES</h3>
+    <script>
+        
+        var n1=23;
+        var n2=567.22;
+        var nombre2="trois";
+
+        var pays ="goma";
+        var a=true, b=false;
+
+        var n= null;
+        var u=undefined;
+        var nn=NaN;
+
+        alert ("la variable n1 stocke une variable de type  " + typeof(n1)+ 
+               "\nla variable n2 stocke ue variale de type  "+ typeof(n2) +
+               "\nla variable nombre2 stocke une variale de type  "+ typeof(nombre2)+
+               "\nla variable ville stocke ue variale de type  "+ typeof(pays)+
+               "\nla variable a stocke ue variale de type  "+ typeof(a)+
+               "\nla variable n stocke ue variale de type  "+ typeof(n)+
+               "\nla variable u stocke ue variale de type  "+ typeof(u)+
+               "\nla variable nn stocke ue variale de type  "+ typeof(nn));
+    </script>
+    <h3>LES CONDITIONS</h3>
+    <script>
+        var heure="12";
+       
+        if (typeof(heure) == "number"){
+            if (heure==12){
+                alert ("c'est midi pile");
+            }
+            else if (heure>=12){
+                alert("c'est l'après midi");
+            }
+            else {
+                alert("c'est l'avant midi");
+            }
+        }
+        else{
+            alert("mauvais format");
+        }
+       
+    </script>
+    <h3>CONDITIONS/SWITCH ET CASE</h3>
+    <script>
+        var heur=107;
+        switch (heur){
+            case 8: alert ("il est 8heure");
+            break;
+        
+
+            case 10: alert('il est 10heures');
+            break;
+
+            default: alert ('heure non recquis');
+
+        }
+        
+    </script>
+
+    <h3>LES BOUCLES </h3>
+    
+   <!-- <h4>WHILE</h4>
+    
+    <script>
+        var x=0;
+
+        while(x<=10){
+            alert ('vous etes le bievenu pour le'+ x + 'tour');
+            x++;
+
+        }
+    </script>
+    <h4>
+        DO WHILE
+    </h4>
+    <script>
+        var time=0;
+        do {
+            alert ('vous etez la bievenu ici pour la'+ time+ 'fois');
+            time++;
+        }
+
+        while(time<=5);
+    </script>
+    <h4>BOUCLE FOR</h4>
+    <script>
+        var b;
+        for (b=0; b<=5; b++){
+            alert('je suis une boucle '+ b); 
+        }
+    </script>
+    <h4>LES FONCTIONS</h4>
+    <script>
+        function multiplication(x,y){
+          
+            var somme;
+            somme = x*y;
+            alert('la multiplication de ces deux nombre  est'+ somme);  
+
+        }
+        multiplication(12,12);
+     </script>
+     --><!--
+     
+    <h3>INTRODUCTION DES OBJETS</h3>
+    <script>
+        /*syntaxe de creation d'un objet
+        */
+
+        // NB: une valeur primitive c'est une chanine de caractère , un caractere ou un nombre quelconque stocké dans une variable
+        var objet_moi = {
+            //les proprités 
+            nom :'chris',
+            postnom: "smith",
+            age:12,
+            // création d'une methode ou une fonction qu'on va stocker dans la propriété identité, on stocke une fonction anonyme dans la proprieté qu'on declenchera plus tard
+            // le pointer this fait reférence aux proprètés de l'objet courant; "en l'occurence objet_moi"
+            // la quatrième propriété "identité" stock une fonction sans nom ou fonction anonyme, notons que identité est une proprieté qui ne stocke pas  une valeur simple mais plutot une fonction qui sers utilisé en ajoutant des parenthèses 
+            
+            identité : function(){
+                return "prenom : " + this.nom +
+                        "\nposton : "+ this.postnom +
+                        "\nage : " + this.age;
+
+            }
+
+
+        }
+        
+        alert(objet_moi.identité());
+        alert("le type de l'objet_moi est"+typeof(objet_moi));
+        alert(objet_moi.nom);
+        
+    </script>
+    <script>
+        // syntaxe de création d'un objet en utilisant des objets natifs
+        /* On peut créer un objet en utilsant une autre methode qui est celle des objets natifs; ce sont les objets qui possede leur proprièté et methode
+        mais qussi qui sont directement pret à etre utilisé. Nous avons principalement l'objet natif ou le constructeur STRING qui gère les chaines de caractère, l'objet natif 
+        NUMBER ou le constructeur NUMBER qui gère tous les nombres et l'objet natif ou le constructeur BOOLEAN qui gère tous les booléen, LE CONSTRUCTEUR OBJECT,AREA; ET ils sont encore appélé objet GLOBALS. Pour les utiliser corectement on se sert du mot clé 'New' 
+        cependant il est conseillé de ne pas trop les utiliser et de privilégier les objets primitifs qui sont simples et faciles à utiliser. Exemple: en créant une variable dans la quelle 
+        on stocke une valeur primitive de type chaine de caractere ou STRING on peut très bien acceder aux memes propriétés et methodes comme "length ou toUpperCase()" qui sont  utilisé pour l'objet natif
+        STRING comme la propriete "length" ou la methode "toUppercase"
+        */
+
+        var caractere ="je suis une chaine de caractère de type String et une valeur primitive";
+        var longueur_caractere= caractere.length;
+        var maj_caractere=caractere.toUpperCase();
+        alert('longueur de la variable caractère est'+ longueur_caractere +
+             '\n la variable caractere en majuscule est'+ maj_caractere
+        );
+
+
+        var objet_caractere = new String('je suis une chaine de caractere et  un objet');
+        var long_objetcaractere= objet_caractere.length;
+        var maj_objetcaractere = objet_caractere.toUpperCase();
+
+        alert("la longueur de l'objet caractere est "+ long_objetcaractere +
+              "\n la variable objet_caractere stockant un objet en majuscule est "+ maj_caractere
+        );
+    </script>  
+    <h1>LES TROIS PRINCIPALES METHODES DE CRETION D'UN OBJET</h1>
+    <p>LA PREMIERE METHODE/OBJET NATIF STRING</p>
+    <script>
+        // cette methode est deconseilé pour des raisons de performenses de code, on privilegera les valeurs primitives pour stocker  du caractère dans une variable
+        var objet_string= new String("je suis un objet de type string")
+        
+        
+    </script>  
+    
+    <P>PREMIERE METHODE/OBJET NATIF OU CONSTRUCTEUR"OBJET"</P>
+    <script>
+        // cette methode est semblable à la première, la difference est que ici nous utilisons l'objet natif ou le constructeur Objetc, ensuite nous allons
+        // lui affecter des propriètés qui stockeront divers variables qui peuvent de type number ou chaine de caractère
+        var objet_chris= new Object();
+        objet_chris.nom= 'SALUMU';
+        objet_chris.surnom="smith";
+        objet_chris.age=23;
+        alert ("le nom de chris est"+ objet_chris.nom +
+               "\n le surnom de chris est"+ objet_chris.surnom+
+               "\n l'age de chris est "+objet_chris.age
+        );
+
+    </script>
+    <p>DEUXIEME METHODE/OBJET LITERAL</p>
+    <script>
+        // cette methode qui la plus  recommandé pour la création d'un object, elle consiste à declarer un variable dans laquelle on stocke des propriètés et methodes, qui seront delimiter grace à une pair d'acolade
+    var objet_smith={
+        nom: "chris",
+        surnom: 'jayson',
+        langue:'francais et anglais',
+        age: 12,
+
+        //creation d'une methode qui contiendra toutes les proprietés de l'objet_smith, 
+        // on crée une proprité identité  dans laquelle on stocke une fonction anonyme pour qu'on puisse s'en servir comme d'une methode qui retournera les valeurs  de toutes les proprites de l'objet_smith ce qui permettra à ce qu'on se serve de la proprieté identite comme une methode en y ajoutant des parenthèses
+        identite:function(){
+            return this.nom +'\n'+ this.surnom+'\n'+ this.age+'\n'+this.langue
+
+        }
+
+    }
+
+    alert(objet_smith.identite());
+    
+    </script>
+    <p>TROISIEME METHODE/CREATION D'UN CONSTRUCTEUR</p>
+  <script>
+    //cette methode consiste à créer notre propre constructeur qui est avant tout une fonction, le constructeur commence tjrs par une lettre majuscule et contient des proprètés et de methodes
+     function Identite(n,p,a){
+        this.nom=n;
+        this.prenom=p;
+        this.age=a;
+
+     }
+
+     var moi = new Identite("chris", "smith", 21);
+     var toi = new Identite("chrsirn", "tryue", 33);
+
+     alert("l'age de chris"+moi.age+'   '+"l'age de l'aute"+toi.age);
+ </script>
+
+ <h2>LES METHODES DE L'OBJET SRING </h2>
+ <script>
+    //les methodes toUppercase et toLowerCase qui permettent de mettre un texte donné soit en miniscule ou en majuscule
+    var texte= "je suis un paragraphe en JAVASCRIPT";
+    var textemin=texte.toLowerCase();
+    var texte1maj=texte.toUpperCase();
+    
+    alert ("texte initial :" + texte +
+        "\ntexte en minuscule :"+ textemin+
+        "\ntexet em majuscule :"+ texte1maj
+    )
+    
+</script>
+ <script>
+     //la methode charAt qui permet de recuperer  un caractere bien precis en specifiant sa position dans une chaine de caractere donné
+    
+    
+    var txt=" j'apprends le javascript ";
+
+    var position_un=txt.chartAt(0);
+    var position_deux=txt.chartAt(8);
+    var position_trois=txt.chartAt(11);
+   alert("1ere position "+ txt.charAt(0)+
+        "\n2eme position "+position_deux+
+        "\n3eme position "+ position_trois
+    )  
+    
+ </script>
+ <script>
+        //LES METHODES INDEXOF ET LASTINDEXOF PERMET DE CHERCHER DANS UNE CHAINE DE CARACTERE DONNE QUAND EST CE QUE UN caractere bien precis a ete detecte soit pour la premire fois ou soit pour la derni7re fois
+
+        var phrase = "j'apprends le JAVASCRIpT";
+        var premiere = phrase.indexOf("p");
+        var derniere = phrase.lastIndexOf("p");
+        var sequence = phrase.indexOf("JA");
+
+        alert ("premier p dans la variable est detecté à la position"+ premiere+
+            "\n dernier p dans la variable a été detecté à la position "+ derniere+
+            "\n la chqine de caractere ja a été detecté à la position "+ sequence + phrase.charAt(0)
+        );
+</script>
+<script>
+    // la methode replace() qui permet de remplacer un caractère bien précis dans une chaine de caractere par un autre 
+    var cours="j'apprends le javascript";
+
+    var cours2=cours.replace('javascript', 'python');
+    alert('premier resultat '+ cours +'  '+ "deuxieme resultat  "+ cours2);
+</script>
+<script>
+    // la methode slice() qui permet de supprimer un contenu bien precis dans une chaine de caractere en lui passant en parametre l'indice du debut et de la fin correspondant à la chaine de caractère qu'on veut supprimer 
+    var cour="j'apprends le javascript";
+
+    var cours_tronque= cour.slice(0,10);
+    alert (cours_tronque);
+
+</script>
+<script>
+    // la methode trim() qui est utilisé sans aucun paramètre et qui permet de nettoyer et mettre en forme un texte(contenant des espaces) ou un ensemble d'information envoyé par l'utilisateur d'un site web dynamique
+     var login="           jaysonsmith@gmail      ";
+     var login_corriger= login.trim();
+     alert ("le login avant la correction  "+login+
+        "\nle login apres coorection est "+ login_corriger);
+
+
+</script>
+<h2>LES PROPRIETES DE L'OBJET NUMBER</h2>
+<script>
+    // les propriétés de l'objet Number sont MIN_VALUE qui permet de dégager le nombre le plus petit admis en javascript et MAX VALUE qui est son contraire cad le nombre le plus grand
+    // les propriétes NEGFATIVE ET POSITIVE INFINITY representent l'infinité du postif(plus l'infini) ainsi que du coté negatif(moins l'infini)
+        var min= Number.MIN_VALUE;
+    var max =Number.MAX_VALUE;
+    var neg= Number.NEGATIVE_INFINITY;
+    var pos=Number.POSITIVE_INFINITY;
+    var nan=Number.NaN;
+    alert(min+" "+ max+" "+ neg +" "+ pos+" "+ nan);
+    
+
+</script>
+<h2>LES METHODES DE L'OBJET NUMBER </h2>
+<script>
+    // la premire est la methode toString qui permet de transformer une variable de type number en String
+     var n1= 12;
+
+     var n2=n1.toString();
+
+     alert("le nombre"+n1 +"est de type  "+typeof(n1) +" et le deuxieme nombre  "+n2+'est de type  '+ typeof(n2));
+</script>
+
+<script>
+    // la methode toFixed permet d'arrondir un nombre decimal en specifiant le nombre de chiffres après la virgule dans les paramètres de la dite methode
+    // elle transforme aussi le type de la variable en string
+
+
+    var n3=10.43697;
+    var n4=10.4578;
+
+    var n3_prime=n3.toFixed(3);
+    var n4_prime = n4.toFixed(2);
+     alert('le nombre '+n3 +' '+ "apèrs arrondissement est egal à"+ ' '+ n3_prime+" "+ "et il est de type "+typeof(n3_prime)+
+            "\n le deuxieme nombre "+ " "+ n4+ 'equivaut desormais à '+n4_prime+' après arrondissemnt');
+</script>
+<script>
+    // la methode toPrecision() permet de preciser la taille cad les nombres de chiffres qui doivent contenir dans une variable donné, 
+    // si dans le parametre on utilise  3; ce nombre n'aura pas plu de 3chriffres
+    // cette methode transofrme aussi une variable de type number en type String
+
+    var n3_new=n3.toLocaleString(6);
+    var n4_new=n4.toPrecision(3);
+
+alert(n3+" !  " +n3_new + " "+"  "+n4+'  '  +n4_new+ " "+typeof(n3_new)+' '+typeof(n4_new)
+)
+
+</script>
+
+<script>
+    // la methode paeseInt et parseFloat sont deux methodes presque semblable qui permettent de tranformer une variable de type string soit en entier ou nombre decimal
+
+     var nombre = 23.689508;
+
+     var nombre_entier=parseInt(nombre);
+     var nombre_decimal=parseFloat(nombre);
+
+     alert(nombre+ typeof(nombre)+"\n"+ nombre_entier+typeof(nombre_entier)+"\n"+ nombre_decimal+ typeof(nombre_decimal))-->
+</script>
+<h2>
+    NOTIONS DES TABLEAUX ET L'OBJET ARRAY
+</h2>
+<script>
+    // L'objet array est un objet natif
+    // syntaxe de création d'un tableau: nous stockons notre tableaau dans une variable donnée ensuite on stocke soit du caractre ou un nombre quelconque 
+    // en separant chaque élement par une virgule; pour accéder à un élement donné de notre tableau on note le nom de la variable suive de l'indice (entre des '[]')  de l'élément qu'on veut dégager
+    var noms=["chris", "smith", "jayson", 'bond'];
+
+    // au cas ou on voudrait modifier une valeur dans un tableau on procedera de cette facon: noms[0]='guru';
+
+    alert("a l'indice o nous avons "+ noms[0]+ 
+    "\n à l'indice  1 nous avons "+ noms[1]);
+
+    
+</script>
+<h3>UTILISATION DE LA PROPRIETE LENGTH</h3>
+<script>
+    //  cette propriété est utilisé lorqu'on cherche à savoir le nombre d'elements que contient un tableau
+    // on peut aussi se servir de cette lorsqu'on veut ajouter un élément à la fin d'un tableau dont on ne connait pas la tailler
+   
+    noms[noms.length]="noms à ajouter"; // ceci correspond donc à noms[4]="nom à ajouter";
+       
+    alert('notre tableau contient '+ noms.length+ "elements");
+
+
+</script>
+<h3>PARCOURIR UN TABLEAU EN JAVASCRIPT</h3>
+
+<script>
+// Syntaxe: en  utilisant  la boucle on va parcourir les élements de notre tableau noms[]; on crée d'abord une variable i qui permettra de faire l'incrementation à chaque passae et p qui stockera un texte affichant tous les elements à chaque passage
+
+var p='';
+var i;
+
+for (i=0; i<noms.length; i++){
+    p+= "prenoms numero"+ (i+1)+ noms[i]+"\n";
+}
+
+alert(p);
+
+
+</script>
+<h3>LES METHODES DE L'OBJET ARRAY</h3>
+<h5>LES METHODES PUSH ET POP </h5>
+<script>
+    // ces methodes ajoutent et suprimer les elements d'un tableau
+    // Push() permet de d'ajouter des elements enfin de tableau et de retourner la taille ou le nombre d'elements que ce tableau contient
+
+    var prenom =['pierre', "chris", "james", 'claire'];
+    var p="";
+    var i;
+
+    var taille= prenom.push('florian', 'chloé');
+
+    for (i=0; i<prenom.length; i++){
+        p+= "le prenom est"+ prenom[i]+'\n';
+    }
+
+    alert ("le tableau prenom contient"+ taille +"elements"+ "\n\n"+ p);
+
+</script>
+<h5>LA METHODE POP</h5>
+<SCRIPT>
+//La methode pop s'utilise sans argument et elle permet du suprrimer un élement à la fin du tableau et retourne la valeur qui a eété suprimer sous forme de chaine de caractère
+var suppr =prenom.pop();
+
+alert ("nouveau tableau"+ p+"\n\n"+ "l'element supprimer grace à la methode pop est"+ suppr);
+</SCRIPT>
+<h5>LES METHODES UNSHIFT ET SHIFT</h5>
+<script>
+    // la methode unshift est le contraire de la methode push cad elle permettra d'ajouter des elements non pas au debut mais plutot à la fin d'un tableau
+    // elle retourne aussi le nombre d'elements que contient ce tableau
+ 
+
+    // la methode shift est utilise comme la methode pop c'est à dire sans argument
+    // Mais c'est la methode contraire à pop car elle permet de supprimer un elelment en debut de tableau et retourne la valeur suprimée en chaine de caractere 
+</script>
+<h5>LA METHODE SPLICE</h5>
+<script>
+    // cette methode permet d'ajouter oude supprimer n'importe quel element dans un tableau
+    // elle peut etre utilisé avec trois arguments, le premier designe l'indice à partir du quel on sougaite insere les nouveaux elements; le deuxieme argument correspon aux nombres d'element qu'on souhaite suprimer
+    // le troisieme argument comportera les elements en chaine de caractere qu'on souhaite ajouter au tableau
+
+
+    var club=["psg", 'Psg', 'Marseille', 'marseille'];
+
+    var a='';
+    var o;
+    club.splice(1, 0, 'milan','rome');
+    // ici le premier argument "1" signifie  que les nouveaux element seront ajouter juste avant l'element qui a l'indice 1 et 0 veut dire qu'on n'effacera aucun élément
+
+    for (o=0; o<club.length; o++){
+        a+= "le club est "+ club[o]+'\n';
+    }
+
+    alert(a);
+</script>
+<h5>LA METHODDE sort et reverse</h5>
+<script>
+    // la methode sort permet de classer les elements d'un tableau par orde alphabetique, notons aussi qu'elle est sensible à la casse(majucule/miniscule)
+    // les prenoms commencant par une lettre majuscule sont classées en premier
+    // la methode riverse c'est l'inverse de la methode sort
+    
+    var classement = club.sort();
+    var classement_contaire=club.reverse();
+    alert("classement avec la methode sort  "+classement +'\n'+ "classement avec la methode reverse  "+a);
+</script>
+<h5>LA METHODE JOIN</h5>
+
+<script>
+    // est un methode qui permet de presenter un tableau sous une autre forme, elle est utilisé avec un argument qui correspond au caractere qui jouera le role de separateur entre les differents element de notre tableau
+
+    var club_chaine= club.join("///");
+
+    alert ('le tableau original'+ p +"\n"+ 'notre deuxeime tableau avec un separateur "///"'+ club_chaine);
+
+</script>
+<H5>LA METHODE SLICE</H5>
+
+<script>
+    // elle permet de créer un nouvau tableau à partir d'un tableau existant, tout en reutilisant certains elements de l'ancien
+    // on l'utilise avec parametre en precisant l'indice de l'element  à partir du quel on souhaite commencer la coupe ou la copie jusqu'à l'indice de fin   
+
+    var club_ldc= club.slice(0,2);
+
+    alert("tablea de base "+ club+"\n"+ "tableau ldc extrait grace à slice() "+club_ldc );
+</script>
+
+<h5>LA METHODE CONCAT</h5>
+<script>
+    // cette methode permet de fusionner deux ou  plusiers tableaux
+
+    var garcons=['chris', 'james ', 'bil', 'smith'];
+
+    var filles =["chloé", "sarah"];
+
+    
+
+    var fusion_gf=garcons.concat(filles);
+
+    var fusion_total= club.concat(garcons, filles);
+
+    alert("fusion du tableau desgarcons et celui des filles "+ fusion_gf+"\n"+ 
+        "fusion du tableau des club avec ceux de garcons et filles "+ fusion_total
+    );
+</script>
+<h2>L'OBJET DATE EN JAVASCRIPT</h2>
+
+<script>
+    // est un objet natif de js qui permet de manipuler des dates; nous avons deux facons d'ecrire les dates en JS, de facon literal CAD sous forme de chaine de caractère  ou grace à bune notation nommé timestamp 
+    // qui nous presenter une date dans un format different cad en la multipliant par 1000
+
+    var datelit= Date();
+
+    var datenow= Date.now();
+
+    // Creation d'un objet date en utilisant le constructeur DATE avec les differents formats
+
+    // format simple sans argument qui permet de stocker l'heure actuel dans une variable donné
+    var date_sansargument = new Date ();
+
+    // Format ISO
+
+    var diso1 = new Date("2024-07-15");
+    var diso2= new Date ("2017-03-23T12:00:00")
+
+    // Format date longue et courte
+
+    var dcourte = new Date("08/20/2023");
+    var dlongue = new Date ("January 23 2015 09:00:00");
+     
+    var dcomplete = new Date ("Sun Jan 23 2015 09:00:00 GMT+0100");
+
+
+    alert("date de maintenant"+ datelit+"   "+ "date en miliseconde"+ datenow+"  "+" date sans argument"+date_sansargument);
+
+    
+   
+</script>
+<h2>LES METHODES DE L'OBJET DATE</h2>
+
+<script>
+    // l'objet date comporte deux grande categories de methodes qui sont les getters et les setters
+    // le getters permettent de récuperer ou d'obtenir les informations relatives à une date 
+    // le setters permettent quant à elles de définir une date ou d'affecter une date donne dans un objet de type date 
+
+    var d= new Date (); // ici on crée un objet de type date qu'on stocke dans une variable d,
+
+    var dms = d.getTime();// la variable d stocke ici le nombre de milliseconde écoulé depuis le 1/01/1970 jusqu'a la date contenu dans d 
+    
+    var dy=d.getFullYear(); // lavriable dy stocke l'année relative à la date contenu dans la variable d
+    var dm = d.getMonth(); // dm stocke un nombre entre 0 et 11 qui correspond au mois contenu dans la variable d
+
+    var ddate= d.getDate(); // ddate contient un nombre entre 0 et 31 qui correspond à la date
+
+    var dday= d.getDay(); //  stocke un nombre entre 0 et 6 qui correspon au jour de la semaine. NB : dimanche=0; lundi :1;
+
+    var dh=d.getHours();
+    var dmi= d.getMinutes();
+    var ds =d.getSeconds();
+    var dMs= d.getMilliseconds();
+
+    alert ("aujord'hui c'est"+ dday+ ddate+"/"+ dm+ "/"+ dy +'\n' +"il est actuellement "+ dh+":"+dmi+":"+ds+":"+dMs);
+
+</script>
+<h3>LES SETTERS</h3>
+
+<script>
+    // ici nous allons nous servir des setters pour definir ou affecter une année, un mois, ... pour obtenir une date personalisé 
+    var dd = new Date ();
+
+
+    dd.setFullYear(2015); // on peut aussi effectuer cette operation une seule fois pour toutes en passant en parametre de setfullyear(l'annee/le mois/le jour)
+    dd.setMonth(6);
+    dd.setDate(23);
+
+    dd.setHours(14);
+    dd.setMinutes(54);
+    dd.setSeconds(34);
+    dd.setMilliseconds(192);
+
+    alert("nouvelle date obtenu grace au setters"+dd);
+
+</script>
+
+<h3>TABLEAUX ET FORMATQGE DES DATES</h3>
+<SCRIPT>
+    // l'utilisation des tableaux en javascript permet de presenter des dates en fraancais, ce qui permet de régler le decalage des mois et des jours de la semaine
+    // on utise la variable d de l'exemple précedent 
+
+
+    var mois =['janvier', "février ", "mars", "avril", "mai", "juin", 'juillet', 'Aout','Septembre', "octobre","Novembre", 'Decemebre'];
+    var jour= ["Dimanche", "lundi", "mardi", "mercredi", 'jeudi', 'vendredi', 'samedi'];
+
+    alert ("aujourdui c'est"+jour[dday]+ "le "+ddate +mois[dm]);
+</SCRIPT>
+
+<h2>PRESENTATON DE L'OBJET MATH ET SES METHODES</h2>
+<h3>LA METHODE RANDOM</h3>
+<script>
+    // l'objet MATH en javascript permet d'effectuer différentes opérations sur des nombres, 
+    // Notons deja que l'objet math n'a pas de constructeur, cad qu'on ne crée pas un objet de type maths car il existe deja en JAVASCRIPT, avec ses propres methodes 
+    // on va utilise ses differentes methodes directement sur l'objet Math() et non pas sur une variable 
+    
+    // la methode random permet de generer un ou plusieurs nombres décimaux aléatoires entre 0 et 1
+    var h= Math.random();
+    var g=Math.random();
+    var g_mille = Math.random()*1000; // ici on va génerer un nombre aleaatoire entre 0 et 1 qu'on multipliera par 1000
+    alert("contenu de la variable h"+h + "  "+"contenu de la variable g"+g+"\n"+g_mille);
+</script>
+
+<h3>LA METHODES ROUND</h3>
+<script>
+    // cette methode permet juste d'arrondir un nombre donné en lui passant en parametre la variable contenant ce nombre QUI SERA ARRONDI
+
+    var k = Math.random()*1000;
+
+    var k_prime = Math.round(k);
+
+    alert("nombre aleatoire "+k +" "+ "nombre arrondi avec round"+ k_prime);
+ </script>
+
+ <h3>LES METHODES FLOOR ET SEIL</h3>
+
+<script>
+    // elles permettent d'arrondir un nombre soit à un entier superieur ou inférieur au nombre initial
+
+    var j= Math.random()*1000;
+    var inf= Math.floor(j);
+    var sup=Math.ceil(j);
+
+    alert("le nombre generer par random multilié par 1000 est"+j+"\n"+"l'arrondi inférieur est "
+        + inf +"\n"+ "et l'arrondi superieur est"+ sup
+    );
+    
+</script>
+
+<h3>LES METHODES MIN ET MAX</h3>
+<script>
+    // permettent de degqger le nombre le plus petit ou le plus grand dans une serie de plusieurs nombres
+
+    var min = Math.min(1, 4, 8, -2);
+
+    var max = Math.max(12, 7, 89, 90, -67);
+
+    alert ("le pkus petit nombre dans cette serie est"+ min +"  "+ " et le grand nombre de cette serie est  "+ max);
+</script>
+<h3>LA METHODE ABS </h3>
+
+<script>
+    // cette methode permet tout simplememnt de retourner la valeur absolue d'un nombre  qui a toujours la valeur positive 
+
+    var z=2;
+    var y = -10;
+
+    var absz=Math.abs(z);
+    var absy= Math.abs(y);
+
+    alert("valeur absolue de "+z+" "+ absz+ " et valeur absolue de "+y+"  "+ absy);
+</script>
+
+<h3>LES AUTRES METHODES DE L'OBJET MATH</h3>
+<script>
+    var x=5, l=3, s=0.5;
+
+    var power = Math.pow(x,l)// pour effectuer une operatin impliquant un nombre exposant un autre
+    var racine_carre= Math.sqrt(x); // pour chercher la racine carre d'un nombre passé en paramètre
+    var consinus=Math.cos(x);
+    var sinus=Math.sin(x);
+    var pi = Math.PI;
+
+    alert("l'exposant de la variable x et l"+ power+ "\ncalcul de la racine carre"+racine_carre+ "\ncalcul du cosinus "+consinus+"\ncalcul du sinus "+sinus+"\ncalcul dela valeur de PI"+pi);
+
+</script>
+
+
+
+
+</body>
+</html>
+
